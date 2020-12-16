@@ -1,0 +1,30 @@
+# FetchProduct
+1. Create MySQL Database
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `price` float NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+2. Configure Maven Dependencies
+Specify the following configuration in your project’s pom.xml file
+dependency
+        groupIdorg.springframework.bootgroupId
+        artifactIdspring-boot-starter-data-jpaartifactId
+    dependency
+    dependency
+        groupIdmysqlgroupId
+        artifactIdmysql-connector-javaartifactId
+        scoperuntimescope
+    dependency
+3.  Configure Data Source Properties Create the application.properties file under srcmainresources directory with the following content
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.url=jdbcmysqllocalhost3306product
+spring.datasource.username=
+spring.datasource.password=
+4. Code Domain Model Class Product
+5. Code Product Repository Interface which will extend JPA interface,will generate implementation code for the most common CRUD operations.
+6. Code Product Service Class, acts as a middle layer between persistence layer (repository) and controller layer.
+7. Code REST Controller Class, exposes RESTful APIs for CRUD operations.
+8. Implement RESTful API to fetch and post product.
